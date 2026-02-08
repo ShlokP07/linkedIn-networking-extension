@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn → Google Sheet",
+  "version": "1.0",
+  "description": "Save LinkedIn profile data to a Google Sheet",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://www.linkedin.com/*", "https://script.google.com/*", "https://*.googleusercontent.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "LinkedIn → Google Sheet"
+  },
+  "options_ui": {
+    "page": "options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/in/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

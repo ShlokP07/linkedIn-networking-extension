@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      width: 320px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+      color: #333;
+      margin: 0;
+    }
+    h2 {
+      margin: 0 0 12px 0;
+      font-size: 16px;
+      color: #0a66c2;
+    }
+    .status {
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      display: none;
+    }
+    .status.success { background: #e6f4ea; color: #137333; display: block; }
+    .status.error { background: #fce8e6; color: #c5221f; display: block; }
+    .status.info { background: #e8f0fe; color: #1967d2; display: block; }
+    button {
+      width: 100%;
+      padding: 10px 16px;
+      background: #0a66c2;
+      color: white;
+      border: none;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    button:hover { background: #004182; }
+    button:disabled { background: #ccc; cursor: not-allowed; }
+    a {
+      color: #0a66c2;
+      text-decoration: none;
+      font-size: 13px;
+    }
+    a:hover { text-decoration: underline; }
+    .extracted { margin: 8px 0; padding: 8px; background: #f3f6f8; border-radius: 6px; font-size: 13px; }
+    .link-row { margin-top: 12px; text-align: center; }
+  </style>
+</head>
+<body>
+  <h2>LinkedIn → Google Sheet</h2>
+  <div id="status" class="status"></div>
+  <div id="extracted" class="extracted" style="display: none;"></div>
+  <button id="saveBtn">Save profile to Google Sheet</button>
+  <button id="debugBtn" type="button" style="background: #5f6368; font-size: 12px;">See what LinkedIn displays (debug)</button>
+  <div id="debugOut" class="extracted" style="display: none; margin-top: 8px; max-height: 280px; overflow: auto; white-space: pre-wrap; word-break: break-all;"></div>
+  <div class="link-row"><a href="#" id="optionsLink">Configure Google Sheet URL</a></div>
+  <script src="popup.js"></script>
+</body>
+</html>
